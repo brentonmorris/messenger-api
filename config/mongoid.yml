@@ -1,0 +1,13 @@
+development:
+  clients:
+    default:
+      uri: <%= ENV['MONGODB_URI'] %>
+
+test:
+  clients:
+    default:
+      uri: <%= ENV['MONGODB_TEST_URI'] || 'mongodb://localhost:27017/cityhive_test' %>
+      options:
+        read:
+          mode: :primary
+        max_pool_size: 1
